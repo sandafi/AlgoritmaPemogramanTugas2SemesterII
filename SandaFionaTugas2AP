@@ -1,0 +1,91 @@
+/*
+NAMA : SANDA FIONA 
+NPM : 227064516091
+ */
+package Inheritance;
+public class Karyawan {
+
+    String NIP;
+    String nama;
+    String golongan;
+    String jenisKelamin;
+    int jumlahHari;
+    int totalGaji;
+
+    void Karyawan(){
+        System.out.println("NIP           : "+NIP);
+        System.out.println("Nama          : "+nama);
+        System.out.println("Jenis Kelamin : "+jenisKelamin);
+    }
+    void absenKerja(){
+        System.out.println("Absen Kerja   : "+jumlahHari);  
+    }
+    void hitungGaji (){
+        System.out.println("Total Gaji    : "+jumlahHari*50000);
+    }
+
+}
+class Dosen extends Karyawan {
+    String golongan;
+    int jumlahSks;
+    int upahPersks;
+
+    void hitungGajiDosen(){
+        System.out.println("Total Gaji    : "+(jumlahSks*upahPersks*jumlahHari));
+    }
+
+}
+class Staff extends Karyawan {
+}
+
+
+
+/*
+NAMA : SANDAFIONA
+NPM : 227064516091
+ */
+package Inheritance;
+public class MainKaryawan {
+    public static void main(String[] args) {
+        
+        Karyawan mainKaryawan = new Karyawan();
+        
+        mainKaryawan.NIP = "2023s";
+        mainKaryawan.nama ="Sanda";
+        mainKaryawan.jenisKelamin = "Perempuan";
+        mainKaryawan.Karyawan();
+        mainKaryawan.jumlahHari = 30;
+        mainKaryawan.absenKerja();
+        mainKaryawan.hitungGaji();
+        
+        System.out.println();
+
+        Dosen mainDosen = new Dosen();
+
+        mainDosen.NIP = "2023a";
+        mainDosen.nama = "Mawar";
+        mainDosen.jenisKelamin = "Perempuan";
+        mainDosen.golongan = "DOSEN GOLONGAN 2";
+        mainDosen.jumlahSks = 6;
+        mainDosen.upahPersks = 100000;
+        mainDosen.jumlahHari = 22;
+        mainDosen.Karyawan();
+        mainDosen.absenKerja();
+        mainDosen.hitungGajiDosen();
+        
+        System.out.println();
+
+        Staff mainStaff = new Staff();
+
+        mainStaff.NIP = "2023N";
+        mainStaff.nama = "Fiona";
+        mainStaff.jenisKelamin = "Laki-Laki";
+        mainStaff.jumlahHari = 26;
+        mainStaff.Karyawan();
+        mainStaff.absenKerja();
+        mainStaff.hitungGaji();
+
+        System.out.println();
+    }
+
+}
